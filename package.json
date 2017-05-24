@@ -1,0 +1,40 @@
+{
+  "name": "skeukit",
+  "version": "0.0.1",
+  "description": "Skeuomorphic web components kit",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build:umd": "NODE_ENV=production webpack --progress",
+    "start": "npm run clean && webpack --watch",
+    "build": "npm run clean && npm run build:umd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicmosc/skeukit.git"
+  },
+  "keywords": [],
+  "author": "Nicolaos Moscholios <nmoscholios@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.2",
+    "cssnano": "^3.10.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "postcss-loader": "^2.0.5",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.6.0"
+  }
+}
