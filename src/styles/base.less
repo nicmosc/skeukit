@@ -1,3 +1,37 @@
-.Skeukit {
-  color: red;
+// -------------------
+// BASE
+//
+// Base File
+// -------------------
+
+@import "vars";
+
+
+* {
+  box-sizing: border-box;
 }
+
+
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
+
+body {
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: @base-font-size;
+  font-family: @base-font-family;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// ::-moz-selection { background: #D7F1F3 }
+// ::selection { background: #D7F1F3 }
