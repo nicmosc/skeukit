@@ -3,3 +3,77 @@
 //
 // Component File
 // -------------------
+
+
+@handle-dimensions: 26px;
+@switch-border-radius: @handle-dimensions;
+@wrapper-padding: 4px;
+@switch-padding: 3px;
+@handle-padding: @wrapper-padding;
+@text-padding: 15px;
+
+
+.Switch {
+  padding: @wrapper-padding;
+  border-radius: @switch-border-radius;
+  overflow: hidden;
+  background: @white;
+  background: linear-gradient(-180deg, @background 0%, @white 50%);
+  transition: all 1s ease-in-out;
+
+  &__background {
+    width: @handle-dimensions * 3 - 5px + (@switch-padding * 2);
+    height: @handle-dimensions + @switch-padding * 2;
+    background: @green;
+    border-radius: @switch-border-radius;
+    padding: @switch-padding;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.33);
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    height: 100%;
+    left: @switch-padding;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 0.87em;
+    text-align: center;
+    width: @handle-dimensions * 2 - 5px;
+    color: @white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.33);
+  }
+
+  &__handle {
+    background: blue;
+    width: @handle-dimensions;
+    height: @handle-dimensions;
+    border-radius: 100%;
+    background: linear-gradient(-180deg, @white 0%, @grey-100 100%);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.38);
+    padding: @handle-padding;
+  }
+
+  &__handleInset {
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-180deg, @grey-100 0%, @white 100%);
+  }
+
+
+  &--disabled {
+    .Switch__background {
+      background: @grey-350;
+    }
+
+    .Switch__content {
+      transform: translateX(-100%);
+    }
+  }
+}
