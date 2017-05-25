@@ -1,6 +1,9 @@
+import kswitch from 'js/components/switch';
+
+
 export default {
-  // dropdown,
+  kswitch,
   all() {
-    // dropdown();
+    kswitch();
   },
 };
