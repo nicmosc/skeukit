@@ -8,8 +8,6 @@ function init() {
   kswitch = $('.Switch');
   handle = kswitch.find('.Switch__handle');
 
-  console.log('init');
-
   _attachEvents();
 }
 
@@ -20,8 +18,8 @@ function _attachEvents() {
 
 
 function _handleClickSwitch() {
-  console.log('clicked');
-  kswitch.toggleClass('Switch--disabled');
+  const parentSwitch = $(this).closest('.Switch');
+  parentSwitch.toggleClass('Switch--disabled');
 }
 
 
