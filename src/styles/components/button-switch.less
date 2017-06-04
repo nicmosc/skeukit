@@ -1,0 +1,76 @@
+// -------------------
+// BUTTON
+//
+// Component File
+// -------------------
+
+@wrapper-padding: @wrapper-dimension;
+@button-radius: 100%;
+@dimensions: 80px;
+@ring-padding: @wrapper-padding;
+@ring-gradient: linear-gradient(-180deg, @white 0%, @grey-300 50%);
+@center-gradient: linear-gradient(-180deg, @grey-300 0%, @white 70%);
+@off-shadow: 0 17px 13px 0 rgba(0,0,0,.42);
+@on-shadow: 0 8px 8px 0 rgba(0,0,0,.42);
+@active-shadow: 0 3px 2px 0 rgba(0,0,0,.35);
+
+
+.ButtonSwitch {
+  border-radius: 100%;
+  padding: @wrapper-padding;
+  background: @white;
+  background: @wrapper-gradient;
+
+  &__ring {
+    width: @dimensions;
+    height: @dimensions;
+    border-radius: 100%;
+    padding: @ring-padding;
+    background: @ring-gradient;
+    box-shadow: @off-shadow;
+    cursor: pointer;
+    transition: all @base-transition-time-short cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    &:active {
+      box-shadow: @active-shadow;
+      transform: scale(0.97);
+    }
+  }
+
+  &__center {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: @center-gradient;
+    display: flex;
+    justify-content: center;
+    padding-top: @wrapper-padding;
+  }
+
+  &__status {
+    border-radius: 4px;
+    height: 16px;
+    width: 5px;
+    background: @white;
+    box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.33);
+    transition: background @base-transition-time-short ease-in-out;
+  }
+
+  &--active {
+    .ButtonSwitch__ring {
+      box-shadow: @on-shadow;
+      transform: scale(0.98);
+
+      &:active {
+        box-shadow: @active-shadow;
+        transform: scale(0.97);
+      }
+    }
+
+    .ButtonSwitch__status {
+      background: @green;
+      box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.33), 0 0 7px 1px rgba(50, 244, 50, 0.80);
+      transition: background @base-transition-time-short ease-in-out;
+    }
+  }
+}
