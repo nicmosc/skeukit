@@ -5,26 +5,26 @@
 // -------------------
 
 
-@handle-dimensions: 26px;
-@switch-border-radius: @handle-dimensions;
-@wrapper-padding: @wrapper-dimension;
+@switch-handle-dimensions: 26px;
+@switch-border-radius: @switch-handle-dimensions;
+@switch-wrapper-padding: @wrapper-dimension;
 @switch-padding: 3px;
-@handle-padding: @wrapper-padding;
-@text-padding: 15px;
+@switch-handle-padding: @switch-wrapper-padding;
+@switch-text-padding: 15px;
 
 
 .Switch {
   font-size: @base-font-size;
   font-family: @base-font-family;
   display: inline-block;
-  padding: @wrapper-padding;
+  padding: @switch-wrapper-padding;
   border-radius: @switch-border-radius;
   background: @white;
   background: @wrapper-gradient;
 
   &__background {
-    width: @handle-dimensions * 3 - 5px + (@switch-padding * 2);
-    height: @handle-dimensions + @switch-padding * 2;
+    width: @switch-handle-dimensions * 3 - 5px + (@switch-padding * 2);
+    height: @switch-handle-dimensions + @switch-padding * 2;
     background: @green;
     border-radius: @switch-border-radius;
     padding: @switch-padding;
@@ -52,18 +52,18 @@
   &__text {
     font-size: 0.89em;
     text-align: center;
-    width: @handle-dimensions * 2 - 5px;
+    width: @switch-handle-dimensions * 2 - 5px;
     color: @white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.33);
   }
 
   &__handle {
-    width: @handle-dimensions;
-    height: @handle-dimensions;
+    width: @switch-handle-dimensions;
+    height: @switch-handle-dimensions;
     border-radius: 100%;
     background: @light-to-dark;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.38);
-    padding: @handle-padding;
+    padding: @switch-handle-padding;
 
     &:hover {
       cursor: pointer;
@@ -84,10 +84,10 @@
     }
 
     .Switch__content {
-      transform: translateX(-@handle-dimensions * 2 + 5px);
+      transform: translateX(-@switch-handle-dimensions * 2 + 5px);
 
       &:active {
-        transform: translateX(-@handle-dimensions * 2 + 10px);
+        transform: translateX(-@switch-handle-dimensions * 2 + 10px);
       }
     }
   }
