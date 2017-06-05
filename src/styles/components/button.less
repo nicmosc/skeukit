@@ -24,6 +24,11 @@
   .Button__center {
     background: linear-gradient(-180deg, darken(@color, 10%) 0%, lighten(@color, 10%) 70%, lighten(@color, 20%) 100%);
   }
+
+  .Button__text {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.33);
+    color: @white;
+  }
 }
 
 
@@ -32,6 +37,10 @@
   padding: @wrapper-padding;
   background: @white;
   background: @wrapper-gradient;
+  border: 0;
+  font-family: @base-font-family;
+  letter-spacing: 0.05em;
+  outline: 0 !important;
 
   &--green {
     .createButton(@green);
@@ -76,8 +85,7 @@
   &__text {
     font-size: 0.8em;
     text-transform: uppercase;
-    color: @white;
+    color: @grey-500;
     text-align: center;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.33);
   }
 }
