@@ -4,15 +4,15 @@
 // Component File
 // -------------------
 
-@wrapper-padding: @wrapper-dimension;
+@button-wrapper-padding: @wrapper-dimension;
 @button-radius: 100%;
 @button-dimensions: 100px;
-@ring-padding: @wrapper-padding;
-@ring-gradient: linear-gradient(-180deg, @white 0%, @grey-300 50%);
+@button-ring-padding: @button-wrapper-padding;
+@button-ring-gradient: linear-gradient(-180deg, @white 0%, @grey-300 50%);
 @center-gradient: linear-gradient(-180deg, @grey-300 0%, @white 70%);
-@shadow: 0 8px 8px 0 rgba(0,0,0,.42);
-@hover-shadow: 0 7px 7px 0 rgba(0,0,0,.42);
-@active-shadow: 0 3px 2px 0 rgba(0,0,0,.35);
+@button-shadow: 0 8px 8px 0 rgba(0,0,0,.42);
+@button-hover-shadow: 0 7px 7px 0 rgba(0,0,0,.42);
+@button-active-shadow: 0 3px 2px 0 rgba(0,0,0,.35);
 
 
 
@@ -36,7 +36,7 @@
   font-size: @base-font-size;
   font-family: @base-font-family;
   border-radius: 100%;
-  padding: @wrapper-padding;
+  padding: @button-wrapper-padding;
   background: @white;
   background: @wrapper-gradient;
   border: 0;
@@ -56,19 +56,19 @@
     width: @button-dimensions;
     height: @button-dimensions;
     border-radius: 100%;
-    padding: @ring-padding;
-    background: @ring-gradient;
-    box-shadow: @shadow;
+    padding: @button-ring-padding;
+    background: @button-ring-gradient;
+    box-shadow: @button-shadow;
     cursor: pointer;
     transition: all @base-transition-time-short cubic-bezier(0.65, 0.05, 0.36, 1);
 
     // &:hover {
-    //   box-shadow: @hover-shadow;
+    //   box-shadow: @button-hover-shadow;
     //   transform: scale(0.99);
     // }
 
     &:active {
-      box-shadow: @active-shadow;
+      box-shadow: @button-active-shadow;
       transform: scale(0.97);
     }
   }
