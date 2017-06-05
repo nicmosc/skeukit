@@ -4,9 +4,76 @@
 // Component File
 // -------------------
 
-@import (inline) "~rangeslider.js/dist/rangeslider.css";
+
+@handle-dimensions: 40px;
+@handle-padding: @wrapper-padding;
 
 
 .Slider {
+  box-shadow: @inner-deep;
+  border-radius: 10px;
+  background: @grey-350;
+  position: relative;
 
+  &__fill {
+    background: @green;
+    position: absolute;
+    display: block;
+    box-shadow: @inner-basic;
+    border-radius: 10px;
+  }
+
+  &__handle {
+    position: absolute;
+    width: @handle-dimensions;
+    height: @handle-dimensions;
+    border-radius: 100%;
+    background: @light-to-dark;
+    box-shadow: 0 4px 7px 0 rgba(0,0,0,0.33);
+    padding: @handle-padding;
+    transition: box-shadow @base-transition-time-short cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: @active-shadow;
+      @active-shadow: 0 3px 2px 0 rgba(0,0,0,.35);
+    }
+
+    &:after {
+      content: ' ';
+      display: inline-block;
+      border-radius: 100%;
+      height: 100%;
+      width: 100%;
+      background: @dark-to-light;
+    }
+  }
+
+  &--horizontal {
+    height: @handle-dimensions / 2;
+    width: 100%;
+
+    .Slider__fill {
+      top: 0;
+      height: 100%;
+    }
+
+    .Slider__handle {
+      top: -@handle-dimensions / 4;
+    }
+  }
+
+  &--vertical {
+    width: @handle-dimensions / 2;
+    min-height: 150px;
+    max-height: 100%;
+
+    .Slider__fill {
+      bottom: 0;
+      width: 100%;
+    }
+  }
 }
