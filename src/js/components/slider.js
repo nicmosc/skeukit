@@ -6,7 +6,7 @@ function init() {
   $('input[type=range]').rangeslider({
     polyfill: false,
 
-    rangeClass: 'Slider',
+    rangeClass: 'Slider__slider',
     disabledClass: 'Slider--disabled',
     horizontalClass: 'Slider--horizontal',
     verticalClass: 'Slider--vertical',
