@@ -18,7 +18,6 @@ function _attachEvents() {
 
 
 function _handleClickSwitch() {
-  console.log('clicked');
   const parentSwitch = $(this).closest('.ButtonSwitch');
   parentSwitch.toggleClass('ButtonSwitch--active');
 }
